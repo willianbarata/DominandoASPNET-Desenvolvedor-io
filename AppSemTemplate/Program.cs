@@ -5,6 +5,9 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+//acesso aos arquivos estáticos
+app.UseStaticFiles();
+
 //Usar as rotas
 app.UseRouting();
 
