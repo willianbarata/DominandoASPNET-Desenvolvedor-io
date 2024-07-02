@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AppSemTemplate.Models.Produto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imagem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    <img src="/images/@item.Imagem" style="height: 100px; width: 61px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                    <botao tipo-botao="Detalhes" route-id="@item.Id"></botao>
+                    <botao tipo-botao="Editar" route-id="@item.Id"></botao>
+                    <botao tipo-botao="Excluir" route-id="@item.Id"></botao>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
