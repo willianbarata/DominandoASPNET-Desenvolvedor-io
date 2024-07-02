@@ -45,3 +45,6 @@
 }
     </tbody>
 </table>
+
+<vc:vc:counter model-counter="@Model.Count()"></vc:vc:counter>
+@await Component.InvokeAsync("Counter", Model.Count())
